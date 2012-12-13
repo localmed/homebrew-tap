@@ -1,6 +1,5 @@
 require 'formula'
 
-
 class JiraCli < Formula
   homepage 'https://bobswift.atlassian.net/wiki/display/JCLI/JIRA+Command+Line+Interface'
   url 'https://bobswift.atlassian.net/wiki/download/attachments/16285777/jira-cli-3.1.0-distribution.zip?api=v2'
@@ -14,10 +13,10 @@ class JiraCli < Formula
   end
 
   def install
-    rm_f Dir["*.bat"]
-    libexec.install Dir["lib/*.jar"]
-    (libexec+'jdbc').install Dir["lib/jdbc/*.jar"]
-    prefix.install Dir["*"]
+    rm_f Dir['*.bat']
+    libexec.install Dir['lib/*.jar']
+    (libexec+'jdbc').install Dir['lib/jdbc/*.jar']
+    prefix.install Dir['*']
     (bin+'jira').write script
   end
 

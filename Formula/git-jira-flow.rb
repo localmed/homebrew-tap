@@ -1,6 +1,5 @@
 require 'formula'
 
-
 class GitJiraFlow < Formula
   homepage 'https://github.com/LocalMed/git-jira-flow'
   url 'https://github.com/LocalMed/git-jira-flow.git'
@@ -12,7 +11,7 @@ class GitJiraFlow < Formula
   depends_on 'jira-cli'
 
   def install
-    bin.install "git-issue"
+    bin.install 'git-issue'
     prefix.install Dir['*']
   end
 
