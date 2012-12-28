@@ -2,8 +2,8 @@ require 'formula'
 
 class GitJiraFlow < Formula
   homepage 'https://github.com/localmed/git-jira-flow'
-  url 'https://github.com/localmed/git-jira-flow.git'
-  version '0.1.0'
+  url 'https://github.com/localmed/git-jira-flow.git', :tag => '0.1.1'
+  version '0.1.1'
 
   head 'https://github.com/localmed/git-jira-flow.git', :branch => 'master'
 
@@ -11,8 +11,7 @@ class GitJiraFlow < Formula
   depends_on 'jira-cli'
 
   def install
-    bin.install 'git-issue'
-    prefix.install Dir['*']
+    system "make", "prefix=#{prefix}", "install"
   end
 
   def caveats; <<-EOS.undent
