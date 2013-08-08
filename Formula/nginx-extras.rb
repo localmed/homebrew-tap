@@ -20,7 +20,9 @@ class NginxExtras < Formula
 
   def config_args
     module_path = "contrib"
-    modules = ["ngx_http_auth_request_module-a29d74804ff1"]
+    modules = ["ngx_devel_kit-0.2.18",
+               "ngx_http_auth_request_module-a29d74804ff1",
+               "set-misc-nginx-module-0.22rc8"]
 
     cc_opt = "-I#{HOMEBREW_PREFIX}/include"
     ld_opt = "-L#{HOMEBREW_PREFIX}/lib"
@@ -59,16 +61,13 @@ class NginxExtras < Formula
             "--with-http_secure_link_module",
             "--with-http_stub_status_module",
             "--with-http_sub_module",
-            "--with-http_xslt_module",
-            "--add-module=#{module_path}/#{modules[0]}"
+            "--with-http_xslt_module"  
           ]
+          
+    modules.each { |mod| args << "--add-module=#{module_path}/#{mod}" }
+    
     return args
 
-
-    puts "Unable to install nginx with passenger support. The passenger"
-    puts "gem must be installed and passenger-config must be in your path"
-    puts "in order to continue."
-    exit
   end
 
   def install
