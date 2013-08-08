@@ -3,7 +3,7 @@ require 'formula'
 class NginxExtras < Formula
   homepage 'http://nginx.org/'
   url 'https://s3.amazonaws.com/heroku-nginx-extras/nginx-extras-1.4.1.tar.gz'
-  sha1 '99987b85e9a8c9dc3688a45ecaa7b2d41eacd52a'
+  md5 '155cb0aa0c3e79ddb57d4e26860de486'
   version '0.1.2'
 
   env :userpaths
