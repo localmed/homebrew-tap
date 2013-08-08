@@ -4,7 +4,7 @@ class NginxExtras < Formula
   homepage 'http://nginx.org/'
   url 'https://s3.amazonaws.com/heroku-nginx-extras/nginx-extras-1.4.1.tar.gz'
   sha1 '99987b85e9a8c9dc3688a45ecaa7b2d41eacd52a'
-  version '0.1.1'
+  version '0.1.2'
 
   env :userpaths
 
